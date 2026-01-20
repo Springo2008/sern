@@ -1,2 +1,3 @@
 # sern
-lowkirkgenuinly
+Main website for sern
+

@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Eurostile';
+    src: url('../font/Eurostile\ Extended\ #2\ Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;}
+h1{
+    font-family: 'Eurostile', Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    cursor: pointer;
+  
+}
+    
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#00022E ;
+    font-family: 'Eurostile', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0.5em 1em;
+    background-color: #ffffff;
+}
+
+header a.icon {
+  background: rgb(255, 255, 255);
+  color: rgb(33, 21, 21);
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-color: #00022E;
+
+}
+
+header a.icon:hover {
+  background-color: #a9a7a7;
+}
+
+#myLinks {
+  display: none;
+  background-color: #333;
+  flex-direction: column;
+}
+
+#myLinks.show {
+  display: flex;
+}
+
+
+#myLinks a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+
+#myLinks a:hover {
+  background-color: #a9a7a7;
+  color: rgb(238, 230, 230);
+}
+
+.main{
+    background-color: #ffffff;
+    display: flex;
+    margin-top: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    border-radius: 0.5rem;
+
+}
+.para1{
+    margin-left: 1rem;
+    
+
+}
+    
+
+
