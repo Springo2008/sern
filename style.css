@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Eurostile";
-    src: url("../font/Eurostile Extended #2 Bold.otf") format("opentype"),
-         url("../font/Eurostile%20Extended%20%232%20Bold.otf") format("opentype");
+    src: url("./font/Eurostile Extended #2 Bold.otf") format("opentype"),
+         url("./font/Eurostile%20Extended%20%232%20Bold.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
