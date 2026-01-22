@@ -73,19 +73,24 @@ header a.icon:hover {
 }
 
 .main{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    
+
+}
+.para1 , .para2{
+    margin-left: 1rem;   
+    flex: 1;
     background-color: #ffffff;
-    display: flex;
     margin-top: 0.5rem;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     border-radius: 0.5rem;
+    padding: 1rem;
+
 
 }
-.para1{
-    margin-left: 1rem;
-    
 
-}
     
 
 
