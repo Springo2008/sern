@@ -79,6 +79,8 @@ header a.icon:hover {
 
 }
 .para1 , .para2{
+    font-size: 14px;
+    hyphens: auto;
     margin-left: 1rem;   
     flex: 1;
     background-color: #ffffff;
