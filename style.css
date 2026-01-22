@@ -92,7 +92,21 @@ header a.icon:hover {
 
 
 }
+.brand {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0.75rem; 
+}
 
-    
+.brand img {
+    height: clamp(2.25rem, 4vw, 3rem);
+    width: auto;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
 
 
