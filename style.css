@@ -84,9 +84,7 @@ header a.icon:hover {
     margin-left: 1rem;   
     flex: 1;
     background-color: #ffffff;
-    margin-top: 0.5rem;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin: 0.5rem;
     border-radius: 0.5rem;
     padding: 1rem;
 
@@ -107,6 +105,16 @@ header a.icon:hover {
 .brand h1 {
     margin: 0;
 }
+@media (max-width: 400px) {
+    .main {
+        grid-template-columns: 1fr; 
+    }
+    .para1, .para2{
+      gap: 0.5rem;
+
+    }
+    
+}
 
 
-
+    
