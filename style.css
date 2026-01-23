@@ -113,7 +113,18 @@ header a.icon:hover {
       gap: 0.5rem;
 
     }
+    .sern-lhc{
+    width: 100%; 
+    object-fit: cover;
+    height: 100px;
+    }
     
+}
+.sern-lhc{
+    width: 100%; 
+    object-fit: cover;
+    height: 300px;
+
 }
 
 
