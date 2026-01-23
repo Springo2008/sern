@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 @font-face {
     font-family: "Eurostile";
-    src: url("/font/Eurostile%20Extended%20Bold.ttf") format("truetype");
+    src: url("/font/Eurostile-BoldExtendedTwo.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -19,7 +21,7 @@ body{
     box-sizing: border-box;
     background-color: #0b0e2a;
     font-family: 'Eurostile', Arial, sans-serif;
-    font-weight: 400;       /* normal weight for body text */
+    font-weight: 400;      
     color: black;
 }
 
