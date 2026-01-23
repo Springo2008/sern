@@ -113,18 +113,28 @@ header a.icon:hover {
       gap: 0.5rem;
 
     }
-    .sern-lhc{
-    width: 100%; 
-    object-fit: cover;
-    height: 100px;
+    .lhc{
+        height: 26vh;
+        min-height: 180px;
     }
+
     
 }
-.sern-lhc{
-    width: 100%; 
-    object-fit: cover;
-    height: 300px;
-
+.sern-lhc {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         
+    object-position: center;
+    display: block;
+    
+}
+.lhc{
+    width: 100%;
+    height: 38vh;         
+    min-height: 240px;
+    max-height: 420px;
+    overflow: hidden;
+    background-color: #000;
 }
 
 
