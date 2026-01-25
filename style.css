@@ -324,6 +324,64 @@ header a.icon {
     transform: translateX(-50%);
 }
 
+@media (max-width: 768px) {
+    header {
+        padding: 0.4em 0.8em;
+    }
+    
+    .brand img {
+        height: 2.2rem;
+    }
+    
+    .digital-clock {
+        font-size: 1rem;
+    }
+    
+    .lhc {
+        height: 30vh;
+        min-height: 200px;
+        max-height: 300px;
+    }
+    
+    .content {
+        padding: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1rem;
+        margin: 1.5rem auto 0.8rem;
+    }
+    
+    .main.two-col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .cta-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .cta {
+        width: 100%;
+        padding: 0.7rem 1rem;
+    }
+}
+
 @media (max-width: 400px) {
     .main, .two-col {
         grid-template-columns: 1fr; 
