@@ -9,9 +9,9 @@ function functionBurger() {
 }
 const homeLink = document.getElementById('homeButton');
 homeLink.addEventListener('click', function() {
-    
-    window.location.href = "index.html"; 
-})
+  const inSrcFolder = window.location.pathname.includes('/src/');
+  window.location.href = inSrcFolder ? '../index.html' : 'index.html';
+});
 function updateClock() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
