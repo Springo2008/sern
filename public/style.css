@@ -651,14 +651,14 @@ footer p {
     }
 
     .hero {
-        height: 92vh;
-        min-height: 560px;
-        max-height: 900px;
+        height: 75vh;
+        min-height: 460px;
+        max-height: 700px;
     }
 
     .hero-title {
-        top: 1.25rem;
-        bottom: auto;
+        top: auto;
+        bottom: 1.5rem;
         left: 1rem;
         right: 1rem;
         font-size: clamp(1.7rem, 7.5vw, 2.6rem);
@@ -719,8 +719,8 @@ footer p {
     }
 
     .image-break {
-        height: 50vh;
-        min-height: 260px;
+        height: 42vh;
+        min-height: 220px;
     }
 
     .cta-row {
@@ -762,5 +762,9 @@ footer p {
 
     .specs-strip .hud-row {
         font-size: 0.75rem;
+    }
+
+    .specs-strip {
+        padding: 1rem;
     }
 }
