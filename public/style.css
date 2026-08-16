@@ -11,6 +11,9 @@
     font-display: swap;
 }
 
+/* =========================================================
+   VARIABLES
+   ========================================================= */
 :root {
     --bg: #0a0a0a;
     --text: #e8e8e8;
@@ -19,9 +22,18 @@
     --panel-border: #333;
     --accent: #ff6b00;
     --max-w: 1100px;
+
+    --font-ui: 'Inter', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    --font-display: 'Eurostile', Arial, sans-serif;
 }
 
-* {
+/* =========================================================
+   BASE
+   ========================================================= */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -34,19 +46,73 @@ body {
     padding: 0;
     background-color: var(--bg);
     color: var(--text);
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--font-ui);
     font-weight: 400;
     line-height: 1.6;
 }
 
-h1, .brand h1 {
-    font-family: 'Eurostile', Arial, sans-serif;
-    margin: 0;
-    cursor: pointer;
-    color: var(--text);
-    background: none;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+h1, .brand h1,
+h2.section-title,
+.hero-title,
+.project-panel h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.section-title {
+    max-width: var(--max-w);
+    margin: 2.5rem auto 1rem;
+    padding: 0 1rem;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+}
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+.content {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+.divider {
+    height: 1px;
+    background-color: #222;
+    max-width: var(--max-w);
+    margin: 2rem auto;
+}
+
+.image-break {
+    width: 100%;
+    height: 60vh;
+    min-height: 320px;
+    max-height: 720px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.image-break img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================================
+   HEADER & NAVIGATION
+   ========================================================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -65,10 +131,15 @@ header {
     z-index: 2;
 }
 
+.brand h1 {
+    margin: 0;
+    cursor: pointer;
+    color: var(--text);
+    background: none;
+}
+
 .brand img {
     height: clamp(2.5em, 4vw, 3rem);
-    width: auto;
-    display: block;
     filter: brightness(0) invert(1);
 }
 
@@ -77,8 +148,7 @@ header {
     display: none;
 }
 
-header a.icon,
-header button.icon {
+header a.icon {
     background: none;
     border: none;
     color: var(--text);
@@ -103,7 +173,7 @@ header button.icon {
     color: var(--text);
     padding: 14px 16px;
     text-decoration: none;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--font-ui);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -122,6 +192,9 @@ header button.icon {
     color: var(--accent);
 }
 
+/* =========================================================
+   HERO
+   ========================================================= */
 .hero {
     width: 100%;
     height: 90vh;
@@ -147,7 +220,6 @@ header button.icon {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    display: block;
     position: absolute;
     inset: 0;
     z-index: 2;
@@ -158,25 +230,14 @@ header button.icon {
     bottom: 2.25rem;
     left: 1.75rem;
     z-index: 7;
-    font-family: 'Eurostile', Arial, sans-serif;
     font-size: clamp(2.4rem, 8vw, 7rem);
-    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     line-height: 0.95;
     color: var(--text);
     margin: 0;
-    text-shadow: none;
     max-width: calc(100% - 3rem);
 }
-
-@media (min-width: 769px) {
-    .hero-title {
-        max-width: 60%;
-    }
-}
-
-
 
 .hero-title::before {
     content: '[';
@@ -226,11 +287,14 @@ header button.icon {
     border-width: 0 1px 1px 0;
 }
 
+/* =========================================================
+   SPECS STRIP
+   ========================================================= */
 .specs-strip {
     width: 100%;
     background-color: var(--panel);
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid var(--panel-border);
+    border-bottom: 1px solid var(--panel-border);
     padding: 0.75rem 1rem;
 }
 
@@ -245,7 +309,7 @@ header button.icon {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 0 1.5rem;
-    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    font-family: var(--font-mono);
 }
 
 .specs-strip .hud-row {
@@ -263,16 +327,6 @@ header button.icon {
     border-bottom: 1px solid #2a2a2a;
 }
 
-@media (min-width: 769px) {
-    .specs-strip .hud-row:last-child {
-        border-bottom: 1px solid #2a2a2a;
-    }
-
-    .specs-strip .hud-panel {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
 .hud-row span {
     color: var(--muted);
 }
@@ -282,72 +336,9 @@ header button.icon {
     font-weight: 500;
 }
 
-.content {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    padding: 0 1rem 3rem;
-}
-
-.divider {
-    height: 1px;
-    background-color: #222;
-    max-width: var(--max-w);
-    margin: 2rem auto;
-}
-
-.section-title {
-    max-width: var(--max-w);
-    margin: 2.5rem auto 1rem;
-    padding: 0 1rem;
-    font-family: 'Eurostile', Arial, sans-serif;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text);
-}
-
-.image-break {
-    width: 100%;
-    height: 60vh;
-    min-height: 320px;
-    max-height: 720px;
-    overflow: hidden;
-    background-color: #000;
-}
-
-.image-break img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.main {
-    max-width: var(--max-w);
-    margin: 2rem auto;
-    padding: 0 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-}
-
-.para1, .para2 {
-    background-color: var(--panel);
-    color: var(--muted);
-    border: 1px solid var(--panel-border);
-    padding: 1.25rem 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
+/* =========================================================
+   PANELS
+   ========================================================= */
 .bio-panel,
 .project-panel {
     background-color: var(--panel);
@@ -362,11 +353,8 @@ header button.icon {
     border-top: 1px solid var(--accent);
 }
 
-.bio-panel h3,
 .project-panel h3 {
-    font-family: 'Eurostile', Arial, sans-serif;
     font-size: 1rem;
-    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--text);
@@ -374,7 +362,7 @@ header button.icon {
 }
 
 .project-panel p {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--font-ui);
 }
 
 .project-meta {
@@ -385,7 +373,7 @@ header button.icon {
 }
 
 .label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.7rem;
     color: var(--accent);
     border: 1px solid var(--accent);
@@ -395,13 +383,16 @@ header button.icon {
 }
 
 .value {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
 
+/* =========================================================
+   CARDS
+   ========================================================= */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -424,7 +415,7 @@ header button.icon {
 }
 
 .card h3 {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--font-ui);
     font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -433,7 +424,7 @@ header button.icon {
 }
 
 .card .meta {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--muted);
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -459,52 +450,47 @@ header button.icon {
 }
 
 .card-footer .price {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-weight: 500;
     color: var(--text);
 }
 
-.card-footer .card-link {
-    background: none;
-    color: var(--accent);
-    text-decoration: none;
-    border: 1px solid var(--accent);
-    padding: 0.35rem 0.7rem;
-    font-family: 'Inter', Arial, sans-serif;
-    font-weight: 600;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.card-footer .card-link:hover {
-    background-color: var(--accent);
-    color: var(--bg);
-}
-
+.card-footer .card-link,
 .card-footer .card-link-full {
     background: transparent;
     color: var(--accent);
     text-decoration: none;
     border: 1px solid var(--accent);
-    padding: 0.6rem 1.2rem;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--font-ui);
     font-weight: 600;
-    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
     transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-footer .card-link {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+}
+
+.card-footer .card-link-full {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
     width: 100%;
     text-align: center;
     display: block;
 }
 
+.card-footer .card-link:hover,
 .card-footer .card-link-full:hover {
     background-color: var(--accent);
     color: var(--bg);
 }
 
+/* =========================================================
+   GALLERY
+   ========================================================= */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -522,7 +508,6 @@ header button.icon {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     transition: transform 0.2s ease;
 }
 
@@ -536,6 +521,9 @@ header button.icon {
     font-size: 0.9rem;
 }
 
+/* =========================================================
+   CTA
+   ========================================================= */
 .cta-row {
     display: flex;
     flex-wrap: wrap;
@@ -552,16 +540,17 @@ header button.icon {
     background: transparent;
     color: #888;
     border: 1px solid #444;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--font-ui);
     font-weight: 600;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     text-decoration: none;
-    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.cta:hover {
+.cta:hover,
+.cta.ghost:hover {
     color: var(--accent);
     border-color: var(--accent);
 }
@@ -571,11 +560,9 @@ header button.icon {
     border-color: #444;
 }
 
-.cta.ghost:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
 .reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -588,14 +575,14 @@ header button.icon {
     transform: none;
 }
 
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
 .lightbox {
     display: none;
     position: fixed;
     z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.95);
     justify-content: center;
     align-items: center;
@@ -623,6 +610,9 @@ header button.icon {
     color: var(--accent);
 }
 
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer {
     background-color: var(--bg);
     color: #666;
@@ -635,7 +625,20 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.85rem;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--font-ui);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (min-width: 769px) {
+    .hero-title {
+        max-width: 60%;
+    }
+
+    .specs-strip .hud-panel {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -697,7 +700,6 @@ footer p {
 
     .section-title {
         margin: 2rem auto 0.8rem;
-        padding: 0 1rem;
     }
 
     .main,
@@ -761,11 +763,4 @@ footer p {
     .specs-strip .hud-row {
         font-size: 0.75rem;
     }
-
-    .cards-grid,
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
 }
-
-
