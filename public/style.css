@@ -2,10 +2,8 @@
 
 @font-face {
     font-family: "Eurostile";
-    src: local("Eurostile"),
-         local("Eurostile-BoldExtendedTwo"),
-         url("./font/Eurostile-BoldExtendedTwo.otf") format("opentype"),
-         url("./font/EurostileExtendedBlack.ttf") format("truetype");
+    src: url("./font/EurostileExtendedBlack.ttf") format("truetype"),
+         url("./font/Eurostile-BoldExtendedTwo.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
