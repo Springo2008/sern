@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SERN</title>
-    <var> <link rel="icon" href="public/photos/logo.svg" type="image/svg+xml"></var>
+    <title>SERN | FPV Interceptor</title>
+    <link rel="icon" href="public/photos/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/style.css">
-    
 </head>
 <body>
     <header>
@@ -16,58 +17,63 @@
             <img src="public/photos/logo.svg" alt="Logo - Hjem">
             <h1 id="homeButton">SERN</h1>
         </div>
-        <div id="clock"></div>
-        <a href="javascript:void(0);" class="icon" onclick="functionBurger()">
-        <i class="fa fa-bars"></i>
+       
+        <a href="javascript:void(0);" class="icon" onclick="functionBurger()" aria-label="Meny">
+            <i class="fa fa-bars"></i>
         </a>
-        
     </header>
 
-    <div id="myLinks">
+    <nav id="myLinks">
         <a href="index.html" class="active">Hjem</a>
         <a href="src/page1.html">FPV Drone</a>
-        <a href="src/matrix.html">Matrix</a>
-    </div>
-    
-    <div class="lhc">
-        <img class="sern-lhc" src="public/photos/20210-138 LHC 01.webp" alt="Lhc-tunnel">
-    </div>
+      
+    </nav>
 
-    <div class="divider"></div>
+    <main>
+        <section class="hero">
+            <div class="hero-media">
+                <img src="public/photos/drone-hero.png" alt="SERN FPV høyhastighets interceptor, nærbilde av propell og nacelle">
+                <h2 class="hero-title">SERN INTERCEPTOR</h2>
+            </div>
+        </section>
 
-    <section class="content">
-        <h2 class="section-title">Hei, jeg er Jørund Holan Husby</h2>
-        <div class="main two-col">
-            <p class="para1">
-                Jeg er interessert i teknologi og liker å lære hvordan ting fungerer. Jeg jobber gjerne med prosjekter der jeg får kombinere forskjellige felt som elektronikk, programmering og design. Det er gøy å bygge ting fra bunnen av og se ideene bli til virkelighet.
-            </p>
-            <p class="para2">
-                Mine interesser inkluderer 3D-design og 3D-printing, elektronikk, matematikk, fysikk og data. Jeg liker å eksperimentere med nye teknologier og løse praktiske problemer. Her på siden deler jeg noen av prosjektene jeg har jobbet med.
-            </p>
+        <section class="specs-strip">
+            <div class="hud-panel" aria-label="Spesifikasjoner">
+                <div class="hud-row"><span>Toppfart</span><b>240 km/h</b></div>
+                <div class="hud-row"><span>Vekt</span><b>700 g</b></div>
+                <div class="hud-row"><span>Motor</span><b>2207 1750KV</b></div>
+                <div class="hud-row"><span>Spenning</span><b>6S LiPo</b></div>
+                <div class="hud-row"><span>Kamera</span><b>1/1.8" 1800 TVL</b></div>
+            </div>
+        </section>
+
+        <div class="image-break">
+            <img src="public/photos/drone-detail.png" alt="SERN FPV interceptor sett ovenfra">
         </div>
-    </section>
 
-    <div class="divider"></div>
-
-    <section class="content">
-        <h2 class="section-title">Mine Prosjekter</h2>
-        <div class="cards-grid">
-            <article class="card">
-                <h3>3-Tommers FPV Racing Drone</h3>
-                <p class="meta">Elektronikk • 3D-printing • Lodding</p>
-                <p>Jeg bygget en FPV-drone helt fra scratch med 3D-printet ramme. Dette prosjektet lærte meg om flight controllers, elektronikk, lodding og hvordan FPV-systemer fungerer.</p>
-                <div class="card-footer">
-                    <a href="src/page1.html" class="card-link-full">Se prosjektet</a>
+        <section class="content reveal">
+            <h2 class="section-title">Hovedprosjekt</h2>
+            <article class="project-panel">
+                <div class="project-meta">
+                    <span class="label">Status</span>
+                    <span class="value">Under utvikling</span>
                 </div>
+                <h3>FPV høyhastighets interceptor</h3>
+                <p class="lead">En 3D-printet, høyhastighets FPV-plattform bygget for lineær akselerasjon og presisjonsnavigering. Ramma er optimalisert for 5-tommers propeller, aerodynamisk skrog og sentralisert masse.</p>
+                <p>Dette prosjektet har som formål å designe og bygge en høyhastighets drone som andre kan lage selv hjemme. Jeg har designet den slik at man kan 3D-printe den hjemme uten ekstra karbonfiberdeler. Total kostnad for alt ligger rundt 4–5000 kr.</p>
+                <p>Prosjektet er open source. 3D-filer, komponentliste og byggeveiledning slippes etter hvert som designet er ferdigtestet. Målet er at andre skal kunne bygge dronen selv med lett tilgjengelige deler.</p>
             </article>
-        </div>
-    </section>
+        </section>
 
-    <footer>
+        <div class="divider"></div>
+
+        
+    </main>
+
+    <footer class="reveal">
         <p>&copy; 2026 Husby. Alle rettigheter forbeholdt.</p>
     </footer>
 
+    <script src="public/script.js"></script>
 </body>
-
-<script src="public/script.js"></script>
 </html>

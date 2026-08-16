@@ -1,31 +1,51 @@
-// Toggle between showing and hiding the navigation menu links when user clicks hamburger icon
 function functionBurger() {
   const x = document.getElementById("myLinks");
-  if (x.classList.contains("show")) {
-    x.classList.remove("show");
-  } else {
-    x.classList.add("show");
-  }
-}
-const homeLink = document.getElementById('homeButton');
-homeLink.addEventListener('click', function() {
-  const inSrcFolder = window.location.pathname.includes('/src/');
-  window.location.href = inSrcFolder ? '../index.html' : 'index.html';
-});
-function updateClock() {
-  const now = new Date();
-  const hours = String(now.getHours()).padStart(2, '0');
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  const seconds = String(now.getSeconds()).padStart(2, '0');
-            
-  document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+  x.classList.toggle("show");
 }
 
+const homeLink = document.getElementById('homeButton');
+if (homeLink) {
+  homeLink.addEventListener('click', function() {
+    const inSrcFolder = window.location.pathname.includes('/src/');
+    window.location.href = inSrcFolder ? '../index.html' : 'index.html';
+  });
+}
+
+// Mission-style status readout: elapsed time since page load
+const statusStart = Date.now();
+function updateClock() {
+  const elapsed = Math.floor((Date.now() - statusStart) / 1000);
+  const h = String(Math.floor(elapsed / 3600)).padStart(2, '0');
+  const m = String(Math.floor((elapsed % 3600) / 60)).padStart(2, '0');
+  const s = String(elapsed % 60).padStart(2, '0');
+  const clock = document.getElementById('clock');
+  if (clock) {
+    clock.textContent = `SYS: ONLINE // T+ ${h}:${m}:${s}`;
+  }
+}
 updateClock();
 setInterval(updateClock, 1000);
 
-// Lightbox for gallery images
+// Scroll-triggered fade-up
 document.addEventListener('DOMContentLoaded', function() {
+  const reveals = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Lightbox for gallery images
   const galleryImages = document.querySelectorAll('.gallery-item img');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
