@@ -61,6 +61,7 @@ img {
 h1, .brand h1,
 h2.section-title,
 .hero-title,
+.mid-title,
 .project-panel h3 {
     font-family: var(--font-display);
     font-weight: 700;
@@ -99,6 +100,51 @@ h2.section-title,
     max-height: 720px;
     overflow: hidden;
     background-color: #000;
+    position: relative;
+}
+
+.image-break::before,
+.image-break::after,
+.image-break .bottom-corner::before,
+.image-break .bottom-corner::after {
+    content: '';
+    position: absolute;
+    width: clamp(22px, 3vw, 38px);
+    height: clamp(22px, 3vw, 38px);
+    border-color: var(--accent);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.image-break::before {
+    top: 1rem;
+    left: 1rem;
+    border-width: 2px 0 0 2px;
+}
+
+.image-break::after {
+    top: 1rem;
+    right: 1rem;
+    border-width: 2px 2px 0 0;
+}
+
+.image-break .bottom-corner {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.image-break .bottom-corner::before {
+    bottom: 1rem;
+    left: 1rem;
+    border-width: 0 0 2px 2px;
+}
+
+.image-break .bottom-corner::after {
+    bottom: 1rem;
+    right: 1rem;
+    border-width: 0 2px 2px 0;
 }
 
 .image-break img {
@@ -106,6 +152,33 @@ h2.section-title,
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.mid-title {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.75rem;
+    z-index: 3;
+    font-size: clamp(1.5rem, 4vw, 4.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 0.9;
+    color: var(--text);
+    margin: 0;
+    text-align: right;
+    max-width: min(70%, 800px);
+    width: max-content;
+    white-space: normal;
+}
+
+.mid-title::before {
+    content: '[';
+    color: var(--accent);
+}
+
+.mid-title::after {
+    content: ']';
+    color: var(--accent);
 }
 
 /* =========================================================
@@ -663,6 +736,22 @@ footer p {
         height: clamp(2em, 3.5vw, 2.5rem);
     }
 
+    .image-break {
+        height: 42vh;
+        min-height: 220px;
+    }
+
+    .mid-title {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        width: auto;
+        max-width: calc(100% - 2rem);
+        font-size: clamp(1.2rem, 6vw, 2.4rem);
+        line-height: 0.95;
+        text-align: left;
+    }
+
     .hero {
         height: 75vh;
         min-height: 460px;
@@ -746,6 +835,13 @@ footer p {
     .image-break {
         height: 42vh;
         min-height: 220px;
+    }
+
+    .mid-title {
+        top: 1rem;
+        right: 1rem;
+        font-size: clamp(1rem, 5vw, 1.6rem);
+        max-width: calc(100% - 2rem);
     }
 
     .cta-row {
