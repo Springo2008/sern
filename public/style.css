@@ -165,8 +165,9 @@ h2.section-title,
     line-height: 0.9;
     color: var(--text);
     margin: 0;
+    padding: 0 1.75rem 0 1rem;
     text-align: right;
-    max-width: min(70%, 800px);
+    max-width: min(68%, 760px);
     width: max-content;
     white-space: normal;
 }
@@ -742,12 +743,13 @@ footer p {
     }
 
     .mid-title {
-        top: 1rem;
+        top: 1.75rem;
         right: 1rem;
         left: 1rem;
         width: auto;
-        max-width: calc(100% - 2rem);
-        font-size: clamp(1.2rem, 6vw, 2.4rem);
+        max-width: calc(100% - 4rem);
+        padding: 0.3rem 0.9rem 0 0.3rem;
+        font-size: clamp(1rem, 5vw, 2rem);
         line-height: 0.95;
         text-align: left;
     }
@@ -760,9 +762,10 @@ footer p {
 
     .hero-title {
         top: auto;
-        bottom: 1.5rem;
+        bottom: 1.75rem;
         left: 1rem;
         right: 1rem;
+        padding: 0.9rem 0.9rem 0 0.3rem;
         font-size: clamp(1.7rem, 7.5vw, 2.6rem);
         max-width: none;
         line-height: 0.92;
