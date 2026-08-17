@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
     font-family: "Eurostile";
-    src: url("./font/Eurostile-BoldExtendedTwo.woff2?v=2") format("woff2"),
-         url("./font/Eurostile-BoldExtendedTwo.otf?v=2") format("opentype");
+    src: url("./font/Eurostile-BoldExtendedTwo.woff2?v=2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
+}
+
+@supports (-moz-appearance: none) {
+    :root {
+        --font-display: 'Anybody', 'Eurostile', 'Arial Black', sans-serif;
+    }
 }
 
 /* =========================================================
@@ -23,7 +29,7 @@
 
     --font-ui: 'Inter', Arial, sans-serif;
     --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
-    --font-display: 'Eurostile', Arial, sans-serif;
+    --font-display: 'Eurostile', 'Anybody', 'Arial Black', sans-serif;
 }
 
 /* =========================================================
