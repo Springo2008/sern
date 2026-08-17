@@ -299,13 +299,13 @@ header a.icon {
 .specs-strip .hud-panel {
     position: static;
     width: 100%;
-    max-width: var(--max-w);
+    max-width: 1400px;
     margin: 0 auto;
     background-color: transparent;
     border: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0 1.5rem;
     font-family: var(--font-mono);
 }
@@ -651,10 +651,6 @@ footer p {
 @media (min-width: 769px) {
     .hero-title {
         max-width: 60%;
-    }
-
-    .specs-strip .hud-panel {
-        grid-template-columns: repeat(5, 1fr);
     }
 }
 
